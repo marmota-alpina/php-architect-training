@@ -6,5 +6,8 @@
     "psr-4": {
       "Architect\\Solid\\": "src/"
     }
+  },
+  "require-dev": {
+    "pdepend/pdepend": "^2.8"
   }
 }

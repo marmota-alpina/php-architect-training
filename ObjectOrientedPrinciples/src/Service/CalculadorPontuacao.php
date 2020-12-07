@@ -2,19 +2,12 @@
 
 namespace Architect\Solid\Service;
 
-use Architect\Solid\Model\AluraMais;
-use Architect\Solid\Model\Curso;
+use Architect\Solid\Model\Pontuavel;
 
 class CalculadorPontuacao
 {
-    public function recuperarPontuacao($conteudo): int
+    public function recuperarPontuacao(Pontuavel $conteudo): int
     {
-        if ($conteudo instanceof Curso) {
-            return 100;
-        } else if ($conteudo instanceof AluraMais) {
-            return $conteudo->minutosDeDuracao() * 2;
-        } else {
-            throw new \DomainException('Apenas Cursos e videos Alura+ possuem pontuações');
-        }
+        return $conteudo->recuperarPontuacao();
     }
 }
